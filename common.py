@@ -64,5 +64,5 @@ class Graph:
             v = np.matmul(damping*self.m, v) + (1-damping)/n  # See https://wikimedia.org/api/rest_v1/media/math/render/svg/9f853c33de82a94b16ff0ea7e7a7346620c0ea04
             error = quadratic_error(prev_v, v)
 
-        return {node: score for (node, score) in zip(self.nodes, v.tolist())}
+        return {node: score for (node, score) in zip(self.nodes, v.tolist())}  # Returns dictionary with the score for each node
 
