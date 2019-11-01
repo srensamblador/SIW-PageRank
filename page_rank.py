@@ -7,7 +7,6 @@ from __future__ import division
 import argparse
 import io
 
-# MODIFICAR EL NOMBRE DEL PAQUETE SI ES NECESARIO
 from common import Graph
 
 
