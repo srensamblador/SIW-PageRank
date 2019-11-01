@@ -15,6 +15,7 @@ def quadratic_error(v1, v2):
 
 
 class Graph:
+    """
     def __init__(self, edges, undirected = False):
         self.graph = {}
 
@@ -50,7 +51,28 @@ class Graph:
         # If the graph has to be undirected (e.g. TextRank)a
         if undirected:
             self.m = self.m + self.m.T - np.diag(self.m.diagonal())
+            """
 
+    def __init__(self, edges, undirected=False):
+        nodes = set()
+        for edge in edges:
+            nodes.add(edge[0])
+            nodes.add(edge[1])
+        nodes = sorted(list(nodes))
+        n = len(nodes)
+        self.nodes = nodes
+
+        m = np.zeros((n,n))
+        for a, b in edges:
+            i, j = nodes.index(a), nodes.index(b)
+            m[j][i] = 1
+
+        if undirected:
+            m = m + m.T - np.diag(m.diagonal())
+
+        norm = np.sum(m, axis=0)
+        m = np.divide(m, norm, where=norm != 0)
+        self.m = m
 
 
 
