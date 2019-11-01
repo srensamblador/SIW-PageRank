@@ -15,7 +15,7 @@ def quadratic_error(v1, v2):
 
 
 class Graph:
-    def __init__(self, edges):
+    def __init__(self, edges, undirected = False):
         self.graph = {}
 
         # Keeps a set of node names (A, B, C...) to refer to refer to them via index
@@ -46,6 +46,13 @@ class Graph:
             else:
                 for node in graph[i]:
                     self.m[node][i] = 1/len(graph[i])   # Edge value is 1/number of outgoing edges from the node
+        
+        # If the graph has to be undirected (e.g. TextRank)a
+        if undirected:
+            self.m = self.m + self.m.T - np.diag(self.m.diagonal())
+
+
+
 
     def page_rank(self, damping=0.85, limit=1.e-8):
         """
@@ -58,11 +65,15 @@ class Graph:
         v = np.ones(n)
         v /= n  # Initialize v with 1/number of nodes
 
+        print(len(v))
+
         error = 1
         while error > limit:  # Iterate while mean quadratic error is greater than limit
             prev_v = v
-            v = np.matmul(damping*self.m, v) + (1-damping)/n  # See https://wikimedia.org/api/rest_v1/media/math/render/svg/9f853c33de82a94b16ff0ea7e7a7346620c0ea04
+            v = damping*np.dot(self.m, v) + (1-damping)/n # See https://wikimedia.org/api/rest_v1/media/math/render/svg/9f853c33de82a94b16ff0ea7e7a7346620c0ea04
             error = quadratic_error(prev_v, v)
 
-        return {node: score for (node, score) in zip(self.nodes, v.tolist())}  # Returns dictionary with the score for each node
+        scores = {node: score for (node, score) in zip(self.nodes, v.tolist())}  # Returns dictionary with the score for each node
+        print(scores)
+        return scores
 
