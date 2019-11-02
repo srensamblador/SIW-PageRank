@@ -60,7 +60,9 @@ class TextRank:
         sent_edges = []
         for i, sent in enumerate(sentences):
             bag1 = BagOfWords(sent)
-            for j in range(i+1, len(sentences)):
+            for j in range(len(sentences)):
+                if (j == i):
+                    continue
                 bag2 = BagOfWords(sentences[j]) # Bag of Words from the third assignment
                 cosine_sim = coef_cosine(bag1, bag2)
                 edge = [(sent, sentences[j]), cosine_sim] # [(node A, node B), cosine_sim(a,b)]

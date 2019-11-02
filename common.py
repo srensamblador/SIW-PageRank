@@ -63,7 +63,6 @@ class Graph:
         n = len(self.nodes)
         v = np.ones(n)
         v /= n  # Initialize v with 1/number of nodes
-
         error = 1
         while error > limit:  # Iterate while mean quadratic error is greater than limit
             prev_v = v
@@ -92,5 +91,6 @@ class WeightedGraph(Graph):
         for edge, value in edges:
             i, j = nodes.index(edge[0]), nodes.index(edge[1])
             m[j][i] = value  # Specified value instead of 1
-
+        
         self.m = m
+

@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1f1c1b56-2ec2-4bb5-a21b-ff777588594e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common.py" beforeDir="false" afterPath="$PROJECT_DIR$/common.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/matrix.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/page_rank.py" beforeDir="false" afterPath="$PROJECT_DIR$/page_rank.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/text.txt" beforeDir="false" afterPath="$PROJECT_DIR$/text.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/text_rank.py" beforeDir="false" afterPath="$PROJECT_DIR$/text_rank.py" afterDir="false" />
-    </list>
+    <list default="true" id="1f1c1b56-2ec2-4bb5-a21b-ff777588594e" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,7 +164,7 @@
       <workItem from="1572532324761" duration="7167000" />
       <workItem from="1572625877965" duration="713000" />
       <workItem from="1572630414233" duration="4210000" />
-      <workItem from="1572646088912" duration="5331000" />
+      <workItem from="1572646088912" duration="5462000" />
     </task>
     <servers />
   </component>
